@@ -27,10 +27,11 @@ Most pipelines are going to follow the same generic workflow regardless of which
 
 - Pipeline Template
 ```groovy
-build()
-unit_test()
-sonarqube()
+message()
+deploy(dev)
+deploy(prod)
 ```
+
 - Libraries
 ```groovy
 void call() {
@@ -43,13 +44,11 @@ void call() {
     }
 }
 ```
+
 - Pipeline Configuration
 ```groovy
 libraries{
-    simple_maven
-    simple_sast
-    simple_deploy
-    simple_nexus
+    simple_mesagge {nodename: "master"}
 }
 stages{
     ci{
@@ -61,8 +60,8 @@ stages{
     }
 }
 application_environments{
-  dev
-  prod
+    dev
+    prod
 }
 ```
 
