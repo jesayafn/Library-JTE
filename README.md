@@ -33,8 +33,14 @@ sonarqube()
 ```
 - Libraries
 ```groovy
-void call(String message){
-  println "here's your message: ${message}"
+void call() {
+
+    String nodeName = config.nodename ?: "master"
+    node(nodeName){
+        stage("Message node ${nodeName}"){
+           
+        }
+    }
 }
 ```
 - Pipeline Configuration
@@ -151,16 +157,18 @@ Create directory structure like this :
 
 ```bash
 .
-└── libraries
-    ├── simple_deploy
-    │   └── steps
-    │       └── deploy.groovy
-    ├── simple_maven
-    │   └── steps
-    │       └── build.groovy
-    └── simple_sast
-        └── steps
-            └── sonarqube.groovy
+├── simple_ansible
+│   └── steps
+│       └── deploy.groovy
+├── simple_deploy
+│   └── steps
+│       └── deploy.groovy
+├── simple_maven
+│   └── steps
+│       └── build.groovy
+└── simple_sast
+    └── steps
+        └── sonarqube.groovy
 ```
 - simple_maven/steps/build.groovy :
 ```groovy
@@ -331,3 +339,6 @@ libraries{
     simple_ansible {nodename: "master"}
 }
 ```
+
+## Advance 
+Coming Soon
