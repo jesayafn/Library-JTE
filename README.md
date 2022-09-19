@@ -339,5 +339,9 @@ libraries{
 }
 ```
 
+# Ref
+- https://jenkinsci.github.io/templating-engine-plugin/2.5.2/
+- https://boozallen.github.io/sdp-docs/learning-labs/1/index.html
+
 ## Advance 
 Coming Soon
