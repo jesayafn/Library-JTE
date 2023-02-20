@@ -1,5 +1,5 @@
 libraries{
-    messages{nodename: "master"}
+    messages {nodename: "master"}
 } 
 
 // applications_environment{
